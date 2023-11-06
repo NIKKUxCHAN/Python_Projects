@@ -1,0 +1,52 @@
+from tkinter import *
+
+def onclick(arg):
+    entry1.insert(END,arg)
+  
+def result():
+    
+    result = entry1.get()
+    entry1.delete(0,END)
+    a = eval(result)
+    entry1.insert(0,a)
+    #print(a)
+
+window = Tk()
+window.geometry('350x290')
+
+entry1 = Entry(window,width=35,justify='center',borderwidth=5)
+entry1.pack()
+
+btn1 = Button(window,height=2,width=5,justify='center',activebackground='grey',text='1',command=lambda: onclick(1))
+btn1.place(x=55,y=30)
+btn2 = Button(window,height=2,width=5,justify='center',activebackground='grey',text='2',command=lambda: onclick(2))
+btn2.place(x=127,y=30)
+btn3 = Button(window,height=2,width=5,justify='center',activebackground='grey',text='3',command=lambda: onclick(3))
+btn3.place(x=197,y=30)
+btn_plus = Button(window,height=2,width=5,justify='center',activebackground='grey',text='+',command=lambda: onclick('+'))
+btn_plus.place(x=270,y=30)
+btn4 = Button(window,height=2,width=5,justify='center',activebackground='grey',text='4',command=lambda: onclick(4))
+btn4.place(x=55,y=90)
+btn5 = Button(window,height=2,width=5,justify='center',activebackground='grey',text='5',command=lambda: onclick(5))
+btn5.place(x=127,y=90)
+btn6 = Button(window,height=2,width=5,justify='center',activebackground='grey',text='6',command=lambda: onclick(6))
+btn6.place(x=197,y=90)
+btn_minus = Button(window,height=2,width=5,justify='center',activebackground='grey',text='-',command=lambda: onclick('-'))
+btn_minus.place(x=270,y=90)
+btn7 = Button(window,height=2,width=5,justify='center',activebackground='grey',text='7',command=lambda: onclick(7))
+btn7.place(x=55,y=150)
+btn8 = Button(window,height=2,width=5,justify='center',activebackground='grey',text='8',command=lambda: onclick(8))
+btn8.place(x=127,y=150)
+btn9 = Button(window,height=2,width=5,justify='center',activebackground='grey',text='9',command=lambda: onclick(9))
+btn9.place(x=197,y=150)
+btn_multiply = Button(window,height=2,width=5,justify='center',activebackground='grey',text='*',command=lambda: onclick('*'))
+btn_multiply.place(x=270,y=150)
+btn0 = Button(window,height=2,width=5,justify='center',activebackground='grey',text='0',command=lambda: onclick(0))
+btn0.place(x=55,y=200)
+btn_divide = Button(window,height=2,width=5,justify='center',activebackground='grey',text='/',command=lambda: onclick('/'))
+btn_divide.place(x=270,y=200)
+btn_equal = Button(window,height=2,width=5,justify='center',activebackground='grey',text='=',command=result)
+btn_equal.place(x=155,y=225)
+
+window.mainloop()
+
